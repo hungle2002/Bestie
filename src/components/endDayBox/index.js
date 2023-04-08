@@ -2,7 +2,7 @@ import { faHandPointRight } from '@fortawesome/free-regular-svg-icons';
 import { faFilePen, faUserCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
-import { MdCancel, MdCheckCircle, MdOutlineError } from 'react-icons/md';
+// import { MdCancel, MdCheckCircle, MdOutlineError } from 'react-icons/md';
 import Lottie from 'react-lottie';
 
 import animationData from '../../lotties/82762-lizard-running-lottie-animation.json';
@@ -103,7 +103,7 @@ function EndDayBox () {
                         <div className="font-bold text-xl">Todolist</div>
                         <div>
                             <div className='text-left text-slate-600'>
-                                <div className="flex items-center gap-1">
+                                {/* <div className="flex items-center gap-1">
                                     <p>- Practice Enlish listening</p>
                                     <MdCheckCircle className="text-green-500" />
                                 </div>
@@ -113,7 +113,7 @@ function EndDayBox () {
                                 </div>
 
                                 <div className="flex items-center gap-1"><p>- Running for 15 minutes</p>
-                                    <MdCheckCircle className="text-green-500" /></div>
+                                    <MdCheckCircle className="text-green-500" /></div> */}
                             </div>
                         </div>
                     </div>
