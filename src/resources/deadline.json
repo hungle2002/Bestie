@@ -1,0 +1,236 @@
+{
+    "object": "database",
+    "id": "5b955da6-0118-4f3e-87d5-399a5f89bd7f",
+    "cover": null,
+    "icon": {
+        "type": "external",
+        "external": {
+            "url": "/images/app-packages/task-db-icon.svg"
+        }
+    },
+    "created_time": "2023-04-08T06:20:00.000Z",
+    "created_by": {
+        "object": "user",
+        "id": "462a71b8-5629-4334-8d62-e0769d28e82c"
+    },
+    "last_edited_by": {
+        "object": "user",
+        "id": "462a71b8-5629-4334-8d62-e0769d28e82c"
+    },
+    "last_edited_time": "2023-04-08T06:40:00.000Z",
+    "title": [
+        {
+            "type": "text",
+            "text": {
+                "content": "Tasks",
+                "link": null
+            },
+            "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+            },
+            "plain_text": "Tasks",
+            "href": null
+        }
+    ],
+    "description": [],
+    "is_inline": false,
+    "properties": {
+        "Task name": {
+            "id": "title",
+            "name": "Task name",
+            "type": "title",
+            "title": {}
+        },
+        "Tags": {
+            "id": "notion%3A%2F%2Ftasks%2Ftags_property",
+            "name": "Tags",
+            "type": "multi_select",
+            "multi_select": {
+                "options": [
+                    {
+                        "id": "Mobile",
+                        "name": "Mobile",
+                        "color": "purple"
+                    },
+                    {
+                        "id": "Website",
+                        "name": "Website",
+                        "color": "blue"
+                    },
+                    {
+                        "id": "Improvement",
+                        "name": "Improvement",
+                        "color": "pink"
+                    }
+                ]
+            }
+        },
+        "Assignee": {
+            "id": "notion%3A%2F%2Ftasks%2Fassign_property",
+            "name": "Assignee",
+            "type": "people",
+            "people": {}
+        },
+        "Status": {
+            "id": "notion%3A%2F%2Ftasks%2Fstatus_property",
+            "name": "Status",
+            "type": "status",
+            "status": {
+                "options": [
+                    {
+                        "id": "not-started",
+                        "name": "Not Started",
+                        "color": "default"
+                    },
+                    {
+                        "id": "in-progress",
+                        "name": "In Progress",
+                        "color": "blue"
+                    },
+                    {
+                        "id": "done",
+                        "name": "Done",
+                        "color": "green"
+                    },
+                    {
+                        "id": "archived",
+                        "name": "Archived",
+                        "color": "gray"
+                    }
+                ],
+                "groups": [
+                    {
+                        "id": "todo-status-group",
+                        "name": "To-do",
+                        "color": "gray",
+                        "option_ids": [
+                            "not-started"
+                        ]
+                    },
+                    {
+                        "id": "in-progress-status-group",
+                        "name": "In Progress",
+                        "color": "blue",
+                        "option_ids": [
+                            "in-progress"
+                        ]
+                    },
+                    {
+                        "id": "complete-status-group",
+                        "name": "Complete",
+                        "color": "green",
+                        "option_ids": [
+                            "done",
+                            "archived"
+                        ]
+                    }
+                ]
+            }
+        },
+        "Due": {
+            "id": "notion%3A%2F%2Ftasks%2Fdue_date_property",
+            "name": "Due",
+            "type": "date",
+            "date": {}
+        },
+        "Priority": {
+            "id": "notion%3A%2F%2Ftasks%2Fpriority_property",
+            "name": "Priority",
+            "type": "select",
+            "select": {
+                "options": [
+                    {
+                        "id": "priority_low",
+                        "name": "Low",
+                        "color": "green"
+                    },
+                    {
+                        "id": "priority_medium",
+                        "name": "Medium",
+                        "color": "yellow"
+                    },
+                    {
+                        "id": "priority_high",
+                        "name": "High",
+                        "color": "red"
+                    }
+                ]
+            }
+        },
+        "Sub-tasks": {
+            "id": "notion%3A%2F%2Ftasks%2Fsub_task_relation",
+            "name": "Sub-tasks",
+            "type": "relation",
+            "relation": {
+                "database_id": "5b955da6-0118-4f3e-87d5-399a5f89bd7f",
+                "type": "dual_property",
+                "dual_property": {
+                    "synced_property_name": "Parent-task",
+                    "synced_property_id": "notion%3A%2F%2Ftasks%2Fparent_task_relation"
+                }
+            }
+        },
+        "Parent-task": {
+            "id": "notion%3A%2F%2Ftasks%2Fparent_task_relation",
+            "name": "Parent-task",
+            "type": "relation",
+            "relation": {
+                "database_id": "5b955da6-0118-4f3e-87d5-399a5f89bd7f",
+                "type": "dual_property",
+                "dual_property": {
+                    "synced_property_name": "Sub-tasks",
+                    "synced_property_id": "notion%3A%2F%2Ftasks%2Fsub_task_relation"
+                }
+            }
+        },
+        "Sprint": {
+            "id": "notion%3A%2F%2Ftasks%2Ftask_sprint_relation",
+            "name": "Sprint",
+            "type": "relation",
+            "relation": {
+                "database_id": "d678fad0-745d-437e-9abe-9f4de1bf672d",
+                "type": "dual_property",
+                "dual_property": {
+                    "synced_property_name": "Tasks",
+                    "synced_property_id": "notion%3A%2F%2Fsprints%2Fsprint_task_relation"
+                }
+            }
+        },
+        "Project": {
+            "id": "notion%3A%2F%2Ftasks%2Ftask_to_project_relation",
+            "name": "Project",
+            "type": "relation",
+            "relation": {
+                "database_id": "1a4572d4-48b8-4cc2-97ab-8522b7b27d01",
+                "type": "dual_property",
+                "dual_property": {
+                    "synced_property_name": "Tasks",
+                    "synced_property_id": "notion%3A%2F%2Fprojects%2Fproject_to_task_relation"
+                }
+            }
+        },
+        "Is Current Sprint": {
+            "id": "notion%3A%2F%2Ftasks%2Ftask_sprint_status_rollup",
+            "name": "Is Current Sprint",
+            "type": "rollup",
+            "rollup": {
+                "rollup_property_name": "Is Current Sprint",
+                "relation_property_name": "Sprint",
+                "rollup_property_id": "notion://sprints/sprint_status_property",
+                "relation_property_id": "notion://tasks/task_sprint_relation",
+                "function": "show_original"
+            }
+        }
+    },
+    "parent": {
+        "type": "page_id",
+        "page_id": "08fbfadc-4374-435d-8c66-f508003a6865"
+    },
+    "url": "https://www.notion.so/5b955da601184f3e87d5399a5f89bd7f",
+    "archived": false
+}
