@@ -36,16 +36,16 @@ const NotionTodo = (props) => {
                     <a href='https://www.notion.so/'>
                         <img className='w-[40px] h-[40px]' src ={require('../../assets/notion.png')}/>
                     </a>
-                    <p className="text-gray-900 text-[20px] text-md dark:text-white md:truncate">
+                    <p className="text-gray-900 text-[20px] text-md ">
                         <a href="https://www.notion.so/">Notion</a>
                     </p>
                 </div>
             </div>
             <div className='flex flex-row justify-between w-full'>
-                <div className="flex-1 overflow-hidden bg-white shadow dark:bg-gray-800 sm:rounded-md">
+                <div className="flex-1 overflow-hidden bg-white shadow sm:rounded-md">
                     <div className="px-4 py-4 sm:px-6">
                         <div className="flex items-center justify-between">
-                            <p className="text-gray-700 text-md dark:text-white md:truncate">
+                            <p className="text-gray-700 text-md  md:truncate">
                                 Today:
                             </p>
                             <div className="flex flex-shrink-0 ml-2">
@@ -58,12 +58,12 @@ const NotionTodo = (props) => {
                     <ul className="divide-y divide-gray-200">
                         {todos.upcomming.map((todo, index) => (
                             <li key={index}>
-                                <a className="block hover:bg-gray-50 dark:hover:bg-gray-900">
+                                <a className="block hover:bg-gray-50 ">
                                     <div className="px-4 py-4 sm:px-6">
                                         <div className="flex items-center justify-between">
                                             <div className='flex flex-start items-center gap-[10px]'>
                                                 <input type="checkbox" className="h-[20px] w-[20px] " value="true" checked={todoState[index]} onClick={() => handleCheck(index)}/>
-                                                <p className="text-gray-700 text-md dark:text-white md:truncate" style={{ textDecoration: todoState[index] || todo.status === 'Done' ? 'line-through' : 'none' }}>
+                                                <p className="text-gray-700 text-md  md:truncate" style={{ textDecoration: todoState[index] || todo.status === 'Done' ? 'line-through' : 'none' }}>
                                                     {todo.title}
                                                 </p>
                                             </div>
@@ -75,7 +75,7 @@ const NotionTodo = (props) => {
                                         </div>
                                         <div className="mt-2 sm:flex sm:justify-between">
                                             <div className="sm:flex">
-                                                <p className="flex items-center font-light text-gray-500 text-md dark:text-gray-300">
+                                                <p className="flex items-center font-light text-gray-500 text-md ">
                                                     {todo.due}
                                                 </p>
                                             </div>
@@ -91,10 +91,10 @@ const NotionTodo = (props) => {
                         </button>
                     </div>
                 </div>
-                <div className="flex-1 overflow-hidden bg-white shadow dark:bg-gray-800 sm:rounded-md">
+                <div className="flex-1 overflow-hidden bg-white shadow  sm:rounded-md">
                     <div className="px-4 py-4 sm:px-6">
                         <div className="flex items-center justify-between">
-                            <p className="text-gray-700 text-md dark:text-white md:truncate">
+                            <p className="text-gray-700 text-md  md:truncate">
                         Up Comming:
                             </p>
                             <div className="flex flex-shrink-0 ml-2">
@@ -108,10 +108,10 @@ const NotionTodo = (props) => {
                     <ul className="divide-y divide-gray-200">
                         {todos.upcomming.map((todo, index) => (
                             <li key={index}>
-                                <a className="block hover:bg-gray-50 dark:hover:bg-gray-900">
+                                <a className="block hover:bg-gray-50 ">
                                     <div className="px-4 py-4 sm:px-6">
                                         <div className="flex items-center justify-between">
-                                            <p className="text-gray-700 text-md dark:text-white md:truncate">
+                                            <p className="text-gray-700 text-md  md:truncate">
                                                 {todo.title}
                                             </p>
                                             <div className="flex flex-shrink-0 ml-2">
@@ -122,7 +122,7 @@ const NotionTodo = (props) => {
                                         </div>
                                         <div className="mt-2 sm:flex sm:justify-between">
                                             <div className="sm:flex">
-                                                <p className="flex items-center font-light text-gray-500 text-md dark:text-gray-300">
+                                                <p className="flex items-center font-light text-gray-500 text-md ">
                                                     {todo.due}
                                                 </p>
                                             </div>
