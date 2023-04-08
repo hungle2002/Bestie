@@ -24,18 +24,15 @@ const App = () => {
     return (
         <div
             // eslint-disable-next-line max-len
-            className="fixed left-0 top-0 z-50 w-screen h-screen flex justify-center items-center bg-yellow-50"
-            // style={{
-            //     position: 'fixed',
-            //     height: '200px',
-            //     width: '200px',
-            //     top: 0,
-            //     left: 0,
-            //     border: '1px #ccc solid'
-            // }}
+            className="fixed left-0 top-0 z-50 w-screen h-screen flex justify-center items-center"
         >
+            <div
+            // eslint-disable-next-line max-len
+                className="fixed z-48  left-0 top-0 w-screen h-screen bg-zinc-100 opacity-10"
+            ></div>
             <EndDayBox></EndDayBox>
         </div>
+
     );
 };
 // Message Listener function
