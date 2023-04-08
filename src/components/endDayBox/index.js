@@ -67,7 +67,7 @@ function EndDayBox () {
     };
 
     return (
-        <div className="flex flex-col pt-2 pb-8 mx-auto mt-10 justify-center max-w-xl border  border-black rounded-xl space-y-4 gap-4">
+        <div className="flex flex-col pt-2 pb-8 mx-auto mt-10 justify-center max-w-4xl border  border-black rounded-xl space-y-4 gap-4">
             <div className="text-xl text-center">Congratulate for your effort today!</div>
             <div className="columns-2 px-6 flex flex-row gap-10 items-center justify-center">
                 <div className="text-center h-48 flex flex-row">
