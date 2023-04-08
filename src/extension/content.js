@@ -2,7 +2,7 @@
 import '../index.css';
 
 // import './build/content.css';
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import EndDayBox from '../components/endDayBox';
@@ -21,8 +21,10 @@ link.href = chrome.runtime.getURL('build/content.css');
 document.head.appendChild(link);
 
 const App = () => {
+    const [showEndDayBox, setShowEndDayBox] = useState(true);
+
     return (
-        <>
+        showEndDayBox && <>
             <div
             // eslint-disable-next-line max-len
                 className="fixed z-40  left-0 top-0 w-screen h-screen bg-zinc-100 opacity-50"
@@ -30,9 +32,15 @@ const App = () => {
             <div
             // eslint-disable-next-line max-len
                 className="fixed left-0 top-0 z-50 w-screen h-screen flex justify-center items-center"
+                onClick={(e) => {
+                    if (e.target === e.currentTarget) {
+                        setShowEndDayBox(false);
+                    }
+                }}
             >
                 <EndDayBox></EndDayBox>
-            </div></>
+            </div>
+        </>
 
     );
 };
