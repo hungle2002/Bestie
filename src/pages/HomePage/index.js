@@ -1,7 +1,5 @@
-import { motion } from 'framer-motion';
-
 import ChartBox from '../../components/chart';
-import Quote from '../../components/quote';
+import EndDayBox from '../../components/endDayBox';
 function HomePage () {
     const pieChartData = [63, 25, 12];
     const pieChartOptions = {
@@ -65,19 +63,12 @@ function HomePage () {
         }]
     };
     return (
-        <div className="justify-center">
-            <motion.div
-                className="w-20 h-20 bg-red-600"
-                animate={{
-                    scale: [1, 2, 2, 1, 1],
-                    rotate: [0, 0, 270, 270, 0],
-                    borderRadius: ['20%', '20%', '50%', '50%', '20%']
-                }}
-            />
-            <Quote/>
-            <ChartBox options={pieChartOptions} series={pieChartData}/>
-        </div>
-    );
+        <div><EndDayBox/></div>);
+    //     // <div className="justify-center">
+
+    //         {/* <ChartBox options={pieChartOptions} series={pieChartData}/> */}
+    //     // </div>
+    // );
 }
 
 export default HomePage;
