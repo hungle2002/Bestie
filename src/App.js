@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import DefaultLayout from './layouts';
-import puplicRoutes from './routes';
+import puplicRoutes from './routes'; ;
 
 export default function App () {
     return (
