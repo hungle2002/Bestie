@@ -1,6 +1,6 @@
-import EndDayBox from '../../components/endDayBox';
+import Quote from '../../components/dayQuote';
 import LineChartBox from '../../components/lineChart';
-import NotionTodo from '../../components/notionTodo';
+import NotionTodo from '../../components/notionTodo'; ;
 function HomePage () {
     const dataLineChart = {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
@@ -18,17 +18,20 @@ function HomePage () {
         ]
     };
     return (
-        <div className='px-48 flex flex-row w-full gap-12 '>
-            <div className='basis-3/5 flex flex-col gap-6'>
-                <div className=' basis-6/12'>
-                    <LineChartBox title={'Working Progress Self'} data={dataLineChart}/>
+        <div>
+            <div className='px-48 flex flex-row w-full gap-12 '>
+                <div className='basis-3/5 flex flex-col gap-6'>
+                    <div className=' basis-6/12'>
+                        <LineChartBox title={'Working Progress Self'} data={dataLineChart}/>
+                    </div>
+                    <div className='bg-green-300 basis-6/12'><NotionTodo/></div>
                 </div>
-                <div className='bg-green-300 basis-6/12'><NotionTodo/></div>
+                <div className='basis-2/5 flex flex-col gap-6'>
+                    <div className='bg-orange-300 basis-9/12'>Plan</div>
+                    <div className='bg-green-300 basis-3/12'>Discord</div>
+                </div>
             </div>
-            <div className='basis-2/5 flex flex-col gap-6'>
-                <div className='bg-orange-300 basis-9/12'>Plan</div>
-                <div className='bg-green-300 basis-3/12'>Discord</div>
-            </div>
+            <Quote/>
         </div>);
 }
 

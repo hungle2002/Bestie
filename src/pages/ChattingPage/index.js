@@ -1,5 +1,8 @@
+import Quote from '../../components/dayQuote';
 function ChattingPage () {
-    return (<h1>This is chattingPage!</h1>);
+    return (<div>
+        <Quote />
+    </div>);
 }
 
 export default ChattingPage;
