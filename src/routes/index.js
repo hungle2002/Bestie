@@ -1,5 +1,6 @@
 import routes from '../config/routes';
 import ChattingPage from '../pages/ChattingPage';
+import HistoryPage from '../pages/HistoryPage';
 import HomePage from '../pages/HomePage';
 import SummaryPage from '../pages/SummaryPage';
 ;
@@ -19,6 +20,11 @@ const publicRoutes = [
         path: routes.summary,
         component: SummaryPage,
         title: 'Summary page title'
+    },
+    {
+        path: routes.history,
+        component: HistoryPage,
+        title: 'history page title'
     }
 ];
 

@@ -1,7 +1,7 @@
 import DiaryTimeline from '../../components/diaryTimeLine';
-const historyPage = (props) => {
+const HistoryPage = (props) => {
     return (
         <DiaryTimeline />
     );
 };
-export default historyPage;
+export default HistoryPage;
