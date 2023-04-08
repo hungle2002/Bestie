@@ -3,7 +3,9 @@ import '../index.css';
 
 // import './build/content.css';
 import React from 'react';
-import ReactDOM from 'react-dom'; ;
+import ReactDOM from 'react-dom';
+
+import EndDayBox from '../components/endDayBox';
 
 // chrome.tabs.insertCSS({ file: './build/content.js' });
 
@@ -21,7 +23,8 @@ document.head.appendChild(link);
 const App = () => {
     return (
         <div
-            className="fixed left-0 top-0 bg-slate-600 z-50 w-10 h-10"
+            // eslint-disable-next-line max-len
+            className="fixed left-0 top-0 z-50 w-screen h-screen flex justify-center items-center bg-yellow-50"
             // style={{
             //     position: 'fixed',
             //     height: '200px',
@@ -31,7 +34,7 @@ const App = () => {
             //     border: '1px #ccc solid'
             // }}
         >
-                Your App injected to DOM correctly!
+            <EndDayBox></EndDayBox>
         </div>
     );
 };
