@@ -1,17 +1,30 @@
-import Chart from 'react-apexcharts';
+// import Chart from 'react-apexcharts';
+import { ArcElement, Chart as ChartJS, Legend, Title, Tooltip } from 'chart.js';
+import React from 'react';
+import { Doughnut } from 'react-chartjs-2';
 
-const ChartBox = (props) => {
-    const { series, options } = props;
+ChartJS.register(ArcElement, Tooltip, Legend, Title);
+export const data = {
+    labels: ['Completed', 'Fail'],
+    datasets: [
+        {
+            label: 'Percent',
+            data: [63, 27],
+            backgroundColor: [
+                'rgba(0, 255, 0, 0.8)',
+                'rgba(255, 0, 0, 0.8)'
+            ],
+            hoverColor: [
+                'rgba(0, 255, 0, 1)',
+                'rgba(255, 0, 0, 1)'
+            ],
+            borderWidth: 1
+        }
+    ]
+};
 
-    return (
-        <Chart
-            options={options}
-            type="pie"
-            width="100%"
-            height="100%"
-            series={series}
-        />
-    );
+const ChartBox = () => {
+    return <Doughnut data={data}/>;
 };
 
 export default ChartBox;

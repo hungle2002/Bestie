@@ -1,6 +1,7 @@
+import EndDayBox from '../../components/endDayBox';
 function HomePage () {
     return (
-        <div>This is HomePage!</div>);
+        <div><EndDayBox/></div>);
 }
 
 export default HomePage;
