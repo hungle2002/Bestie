@@ -22,8 +22,8 @@ function EndDayBox () {
 
     return (
         <div className="pt-2 pb-8 mx-auto mt-10 justify-center max-w-4xl border  border-black rounded-xl space-y-4">
-            <div className="text-xl text-center">Congratulate for your effort today!</div>
-            <div className="columns-2 px-6">
+            <div className="text-2xl text-center font-bold text-red-600 ">~ Congratulate for your effort today! ~</div>
+            <div className="columns-2 px-6 pt-4">
                 <div className="text-center h-48 flex flex-row">
                     <div className="rounded-full bg-blue-500 h-40 w-40 mr-6"></div>
                     <div className="flex flex-col">
