@@ -1,0 +1,62 @@
+{
+    "manifest_version": 3,
+    "name": "Bestie",
+    "version": "0.0.20",
+    "description": "Find a new way to organize your life",
+    "author": "https://bestie.io",
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'; frame-ancestors 'none';"
+    },
+    "icons": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_title": "Open Bestie"
+    },
+    "host_permissions": [
+      "file://*/*",
+      "http://*/*",
+      "https://*/*"
+    ],
+    "permissions": [
+      "tabs",
+      "activeTab",
+      "alarms",
+      "clipboardWrite",
+      "notifications",
+      "scripting",
+      "storage",
+      "unlimitedStorage",
+      "webRequest"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "js": [
+          "build/content.js"
+        ],
+        "matches": [
+          "file://*/*",
+          "http://*/*",
+          "https://*/*"
+        ],
+        "all_frames": true
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "injection.js"
+        ],
+        "matches": [
+          "<all_urls>"
+        ]
+      }
+    ]
+}
+  
