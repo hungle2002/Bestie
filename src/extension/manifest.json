@@ -51,7 +51,8 @@
     "web_accessible_resources": [
       {
         "resources": [
-          "injection.js"
+          "injection.js",
+          "build/content.css"
         ],
         "matches": [
           "<all_urls>"
