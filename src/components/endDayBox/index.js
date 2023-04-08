@@ -1,17 +1,26 @@
-import { faHandPointRight } from '@fortawesome/free-regular-svg-icons';
+// import { faHandPointRight } from '@fortawesome/free-regular-svg-icons';
 import { faCircleCheck, faCircleXmark, faFilePen } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
+import Lottie from 'react-lottie';
 
+/* eslint-disable max-len */
+import animationData from '../../lotties/writing.json';
 import TimeTable from '../animatedElements/TimeTable';
 import ChartBox from './chart';
-/* eslint-disable max-len */
+
 function EndDayBox () {
     const [diaryInput, setDiaryInput] = useState(0);
     const [evalInput, setEvalInput] = useState('');
     const [evalFocus, setEvalFocus] = useState(false);
-    const handleDiary = () => {
-        setDiaryInput(1);
+    const [showModal, setShowModal] = useState(false);
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+        }
     };
     const handleFocus = () => {
         setEvalFocus((value) => !value);
@@ -21,6 +30,79 @@ function EndDayBox () {
     };
     return (
         <div className="flex flex-col pt-2 justify-center max-w-4xl border border-zinc-400 bg-white rounded-xl text-zinc-900 opacity-100">
+            {showModal
+                ? (
+                    <>
+                        <div
+                            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+                        >
+                            <div className="relative my-6 mx-auto max-w-3xl min-w-[60%]">
+                                {/* content */}
+                                <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                                    {/* header */}
+                                    <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t text-zinc-700">
+                                        <h3 className="text-3xl font-semibold">
+                                            Tell me your feeling bestie
+                                        </h3>
+                                        <button
+                                            className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                            onClick={() => setShowModal(false)}
+                                        >
+                                            <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                      ×
+                                            </span>
+                                        </button>
+                                    </div>
+                                    {/* body */}
+                                    <div className="relative p-6 flex flex-row justify-between items-center w-full h-[500px] gap-[30px]">
+                                        {/* <div className='flex-1 h-full'>
+                                            <input
+                                                className='w-full h-full peer block min-h-[auto] rounded border-0 bg-transparent px-3 py-[0.32rem]  outline-none transition-all focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none  [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 '
+                                                type="text"
+                                            />
+                                        </div> */}
+                                        <div className="relative flex-1 mb-3 w-[200px] border h-full" data-te-input-wrapper-init>
+                                            <textarea
+                                                type="textarea"
+                                                className="h-full w-full rounded-[15px] bg-transparent px-[20px] py-[30px] outline-none resize-none border-none text-[20px]"
+                                            >
+                                            </textarea>
+
+                                        </div>
+                                        <div className='w-[2px] h-full bg-black/70'></div>
+                                        <div>
+                                            <Lottie options={defaultOptions}
+                                                height={400}
+                                                width={500}
+                                            />
+                                        </div>
+                                    </div>
+                                    {/* footer */}
+                                    <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                                        <button
+                                            className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                            type="button"
+                                            onClick={() => setShowModal(false)}
+                                        >
+                    Close
+                                        </button>
+                                        <button
+                                            className="bg-black/70 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                            type="button"
+                                            onClick={() => setShowModal(false)}
+                                        >
+                    Done
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                    </>
+                )
+                : null
+            }
+
             <div className="text-xl text-center">Review your day with Bestie</div>
             <div className="flex flex-col gap-6 p-10">
                 <div className="flex flex-row gap-10">
@@ -32,15 +114,9 @@ function EndDayBox () {
                             </div>
                             <div>
                                 {diaryInput === 0 && <div className='text-right'>
-                                    <button className="border bg-blue-500 text-white font-medium px-2 py-2 text-sm rounded-xl mt-4" onClick={handleDiary}>Write now!</button>
+                                    <button className="border bg-blue-500 text-white font-medium px-2 py-2 text-sm rounded-xl mt-4" onClick={() => setShowModal(true)}>Write now!</button>
                                 </div>
                                 }
-                                {diaryInput === 1 && <div>
-                                    <textarea className='w-full h-20 border border-black rounded-xl p-[15px]' placeholder='Write your day <3'/>
-                                    <div className='text-right'>
-                                        <button className="border bg-blue-500 text-white font-medium px-2 py-2 text-sm rounded-xl mt-2" onClick={handleDiary}>Submit</button>
-                                    </div>
-                                </div>}
                             </div>
                         </div>
                         <h1 className="text-2xl font-bold"> Tasks </h1>
@@ -78,7 +154,7 @@ function EndDayBox () {
                                 onBlur={() => { setEvalInput(''); handleFocus(); }}
                             >
                             </input>
-                            {evalFocus && <div className='absolute right-0 top-[50%] translate-y-[-50%] translate-x-[-10px] h-full flex justify-center items-center text-[50px]'>/10</div>}
+                            {evalFocus && <div className='absolute right-0 top-[50%] translate-y-[-50%] translate-x-[-10px] h-full flex justify-center items-center text-[50px] text-zinc-600'>/10</div>}
                             <label
                                 // htmlFor="exampleFormControlInpu3"
                                 className="bg-white pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-slate-700 text-lg font-medium transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
