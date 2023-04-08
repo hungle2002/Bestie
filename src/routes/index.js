@@ -1,6 +1,8 @@
 import routes from '../config/routes';
 import ChattingPage from '../pages/ChattingPage';
-import HomePage from '../pages/HomePage'; ;
+import HomePage from '../pages/HomePage';
+import SummaryPage from '../pages/SummaryPage';
+;
 
 const publicRoutes = [
     {
@@ -12,6 +14,11 @@ const publicRoutes = [
         path: routes.chatting,
         component: ChattingPage,
         title: 'Chatting page title'
+    },
+    {
+        path: routes.summary,
+        component: SummaryPage,
+        title: 'Summary page title'
     }
 ];
 
