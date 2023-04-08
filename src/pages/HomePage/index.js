@@ -1,7 +1,6 @@
-import NotionTodo from '../../components/notionTodo';
-
 import EndDayBox from '../../components/endDayBox';
 import LineChartBox from '../../components/lineChart';
+import NotionTodo from '../../components/notionTodo';
 function HomePage () {
     const dataLineChart = {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
