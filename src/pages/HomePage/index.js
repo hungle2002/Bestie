@@ -1,7 +1,7 @@
 import EndDayBox from '../../components/endDayBox';
 import LineChartBox from '../../components/lineChart';
 function HomePage () {
-    const data2 = {
+    const dataLineChart = {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets: [
             {
@@ -19,7 +19,9 @@ function HomePage () {
     return (
         <div className='px-48 flex flex-row w-full gap-12 h-[880px]'>
             <div className='basis-3/5 flex flex-col gap-6'>
-                <div className='bg-orange-300 basis-6/12'>Chart</div>
+                <div className=' basis-6/12'>
+                    <LineChartBox title={'Working Progress Self'} data={dataLineChart}/>
+                </div>
                 <div className='bg-green-300 basis-6/12'>Notion</div>
             </div>
             <div className='basis-2/5 flex flex-col gap-6'>

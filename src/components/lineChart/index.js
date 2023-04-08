@@ -16,52 +16,15 @@ import { Line } from 'react-chartjs-2';
 
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Filler, Tooltip, TimeScale, Title,
     Legend);
-const LineChartBox = ({ title, data, opNum }) => {
-    const options1 = {
+const LineChartBox = ({ title, data }) => {
+    const option = {
         responsive: true,
         showTooltips: true,
         interaction: {
             mode: 'index',
             intersect: false
         },
-        stacked: false,
-        plugins: {
-            title: {
-                display: true
-            }
-        },
-        scales:
-    {
-        y:
-      {
-          min: 0,
-          max: 100,
-          type: 'linear',
-          display: true
-      },
-        y1: {
-            type: 'linear',
-            display: true,
-            min: 0,
-            max: 20000,
-            grid: {
-                drawOnChartArea: false // only want the grid lines for one axis to show up
-            }
-        },
-        x: {
-            grid: {
-                display: false
-            }
-        }
-    }
-    };
-    const options2 = {
-        responsive: true,
-        showTooltips: true,
-        interaction: {
-            mode: 'index',
-            intersect: false
-        },
+        maintainAspectRatio: false,
         stacked: false,
         scales:
     {
@@ -77,12 +40,12 @@ const LineChartBox = ({ title, data, opNum }) => {
         }
     }
     };
-    const options = options2;
+    const options = option;
     return (
-        <div className="h-96 gap-2.5">
-            <h1>{title} Analytics</h1>
-            <p>Realtime - last 7 days</p>
-            <div className="h-96">
+        <div className="flex flex-col h-full gap-4">
+            <h1 className='text-4xl'>{title} Evaluate</h1>
+            <p className='text-xl text-gray-500'>Last 7 days</p>
+            <div className="flex h-96 items-center justify-center p-3">
                 <Line
                     data={data}
                     options={options} />
