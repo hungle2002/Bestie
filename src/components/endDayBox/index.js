@@ -1,3 +1,6 @@
+import { faHandPointRight } from '@fortawesome/free-regular-svg-icons';
+import { faFilePen, faUserCheck } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import Lottie from 'react-lottie';
 
@@ -53,34 +56,49 @@ function EndDayBox () {
                 </div>
             </div>
             <div className="flex flex-row gap-12 justify-center">
-                <div className="basis-1/2  space-y-2 border border-black rounded-xl px-4 pt-2 pb-6 shadow-xl">
-                    <div className="text-base font-medium text-center">Working statistic</div>
-                    <div className="flex flex-row">
-                        <div className="basis-1/2 flex flex-col">
-                            <div>Short plan done: 20%</div>
-                            <div>Long plan done: 5%</div>
-                            <div>Work time: 10 hours</div>
+                <div className="basis-1/2  space-y-2 border border-black rounded-xl px-4 pt-2 pb-6 shadow-xl h-62">
+                    <div className="text-base font-medium text-center border-b border-slate- pb-2 mb-2 ">Working statistic</div>
+                    <div className="flex flex-row justify-center">
+                        <div className="basis-1/2 flex flex-col space-y-2">
+                            <div>Key board: </div>
+                            <div>Click:</div>
+                            <div>Short plan done:</div>
+                            <div>Long plan done:</div>
+                            <div>Work time:</div>
+                            <div>Distract time:</div>
                         </div>
-                        <div className="basis-1/2 flex flex-col">
-                            <div>Click: 1000</div>
+                        <div className="basis-1/4 flex flex-col space-y-2">
+                            <div>20%</div>
+                            <div>5%</div>
+                            <div>10 hours</div>
+                            <div>1000 times</div>
+                            <div>300 times</div>
+                            <div>1.5 hours</div>
+                            {/* <div>Click: 1000</div>
                             <div>Key board: 1000</div>
-                            <div>Distract time: 1.5 hours</div>
+                            <div>Distract time: 1.5 hours</div> */}
                         </div>
                     </div>
                 </div>
                 <div className="basis-1/3 space-y-4">
                     <div className="space-y-2">
-                        <div className="text-base font-medium">Evaluate yourself</div>
-                        <input type="text" className="border rounded-2xl w-16 text-center" placeholder="On 100" />
+                        <div className="font-medium text-lg">{<FontAwesomeIcon icon={faHandPointRight} className='mr-1'/>} Evaluate yourself </div>
+                        <input type="text" className="ml-48 border rounded-2xl h-8 w-16 text-center" placeholder="On 100" />
                     </div>
-                    <div>
-                        <div className="text-base font-medium">Diary</div>
-
+                    <div className='pt-4'>
+                        <div className="text-lg font-medium">{<FontAwesomeIcon icon={faFilePen} className='mr-1.5'/>}Diary</div>
                         {diaryInput === 0 && <div>
-                            <div className='text-sm text-slate-700 text-center'>Vent it out, let it go - write your stress away!</div>
-                            <button className="border bg-blue-500 text-white font-medium px-2 py-2 text-sm rounded-xl mt-6" onClick={handleDiary}>Write now!</button>
+                            <div className='text-sm text-slate-700 text-center mt-1'>Vent it out, let it go - write your stress away!</div>
+                            <div className='text-right'>
+                                <button className="border bg-blue-500 text-white font-medium px-2 py-2 text-sm rounded-xl mt-4" onClick={handleDiary}>Write now!</button>
+                            </div>
                         </div>}
-                        {diaryInput === 1 && <textarea className='w-full h-24 border border-black rounded-xl' placeholder='  Write your day <3'/> }
+                        {diaryInput === 1 && <div>
+                            <textarea className='w-full h-20 border border-black rounded-xl' placeholder='  Write your day <3'/>
+                            <div className='text-right'>
+                                <button className="border bg-blue-500 text-white font-medium px-2 py-2 text-sm rounded-xl mt-2" onClick={handleDiary}>Submit</button>
+                            </div>
+                        </div>}
                     </div>
                 </div>
 
