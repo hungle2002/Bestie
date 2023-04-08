@@ -22,16 +22,17 @@ document.head.appendChild(link);
 
 const App = () => {
     return (
-        <div
-            // eslint-disable-next-line max-len
-            className="fixed left-0 top-0 z-50 w-screen h-screen flex justify-center items-center"
-        >
+        <>
             <div
             // eslint-disable-next-line max-len
-                className="fixed z-48  left-0 top-0 w-screen h-screen bg-zinc-100 opacity-10"
+                className="fixed z-40  left-0 top-0 w-screen h-screen bg-zinc-100 opacity-50"
             ></div>
-            <EndDayBox></EndDayBox>
-        </div>
+            <div
+            // eslint-disable-next-line max-len
+                className="fixed left-0 top-0 z-50 w-screen h-screen flex justify-center items-center"
+            >
+                <EndDayBox></EndDayBox>
+            </div></>
 
     );
 };
