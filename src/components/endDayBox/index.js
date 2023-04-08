@@ -13,8 +13,8 @@ function EndDayBox () {
     };
 
     return (
-        <div className="flex flex-col pt-2 mx-auto mt-10 justify-center max-w-4xl border border-zinc-400 bg-white rounded-xl">
-            <div className="text-xl text-center">Review your day!</div>
+        <div className="flex flex-col pt-2 justify-center max-w-4xl border border-zinc-400 bg-white rounded-xl text-zinc-900 opacity-100">
+            <div className="text-xl text-center">Review your day with Bestie</div>
             <div className="flex flex-col gap-6 p-10">
                 <div className="flex flex-row gap-10">
                     <div className="flex flex-col justify-start gap-4">
@@ -78,19 +78,19 @@ function EndDayBox () {
                             </div>
                             <div className="flex flex-col space-y-2">
                                 <div>7 hours
-                                    <span className="ml-4  border-[1.2px] border-green-600 text-green-600 bg-green-100 p-1 rounded-3xl w-fit text-sm">↗ 10%</span>
+                                    <span className="ml-4  border-[1.2px] text-green-600 bg-green-100 p-1 rounded-3xl w-fit text-sm">↗ 10%</span>
                                 </div>
                                 <div>1.5 hours
-                                    <span className="ml-4 border-[1.2px] border-red-600 text-red-600 bg-red-100 p-1 rounded-3xl w-fit text-sm">↙ 6%</span>
+                                    <span className="ml-4 border-[1.2px] text-red-600 bg-red-100 p-1 rounded-3xl w-fit text-sm">↙ 6%</span>
                                 </div>
                                 <div>1230 words 20%
-                                    <span className="ml-4  border-[1.2px] border-green-600 text-green-600 bg-green-100 p-1 rounded-3xl w-fit text-sm">↗ 10%</span>
+                                    <span className="ml-4  border-[1.2px] text-green-600 bg-green-100 p-1 rounded-3xl w-fit text-sm">↗ 10%</span>
                                 </div>
                                 <div>400 clicks 5%
-                                    <span className="ml-4  border-[1.2px] border-green-600 text-green-600 bg-green-100 p-1 rounded-3xl w-fit text-sm">↗ 10%</span>
+                                    <span className="ml-4  border-[1.2px] text-green-600 bg-green-100 p-1 rounded-3xl w-fit text-sm">↗ 10%</span>
                                 </div>
                                 <div>12 apps
-                                    <span className="ml-4  border-[1.2px] border-green-600 text-green-600 bg-green-100 p-1 rounded-3xl w-fit text-sm">↗ 10%</span>
+                                    <span className="ml-4  border-[1.2px] text-green-600 bg-green-100 p-1 rounded-3xl w-fit text-sm">↗ 10%</span>
                                 </div>
 
                             </div>
