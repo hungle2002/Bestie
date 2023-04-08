@@ -1,6 +1,7 @@
 const routes = {
     home: '/home',
-    chatting: '/chatting'
+    chatting: '/chatting',
+    summary: '/summary'
 };
 
 export default routes;
