@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import Lottie from 'react-lottie';
 
 import animationData from '../../lotties/82762-lizard-running-lottie-animation.json';
 /* eslint-disable max-len */
 function EndDayBox () {
+    const [diaryInput, setDiaryInput] = useState(0);
     const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -11,6 +13,10 @@ function EndDayBox () {
             preserveAspectRatio: 'xMidYMid slice'
         }
     };
+    const handleDiary = () => {
+        setDiaryInput(1);
+    };
+
     return (
         <div className="pt-2 pb-8 mx-auto mt-10 justify-center max-w-4xl border  border-black rounded-xl space-y-4">
             <div className="text-xl text-center">Congratulate for your effort today!</div>
@@ -20,8 +26,10 @@ function EndDayBox () {
                     <div className="flex flex-col">
                         <div className="font-bold text-xl">Todolist</div>
                         <div>
-                            <div className='text-left'>
-                                <div>Practice Enlish listening V</div>
+                            <div className='text-left text-slate-600'>
+                                <div>- Practice Enlish listening</div>
+                                <div>- Reading documentation for UWC</div>
+                                <div>- Running for 15 minutes</div>
                             </div>
                         </div>
                     </div>
@@ -65,9 +73,14 @@ function EndDayBox () {
                         <div className="text-base font-medium">Evaluate yourself</div>
                         <input type="text" className="border rounded-2xl w-16 text-center" placeholder="On 100" />
                     </div>
-                    <div className="space-y-2">
+                    <div>
                         <div className="text-base font-medium">Diary</div>
-                        <button className="border bg-blue-500 text-white font-medium px-2 py-2 text-sm rounded-xl">Write now!</button>
+
+                        {diaryInput === 0 && <div>
+                            <div className='text-sm text-slate-700 text-center'>Vent it out, let it go - write your stress away!</div>
+                            <button className="border bg-blue-500 text-white font-medium px-2 py-2 text-sm rounded-xl mt-6" onClick={handleDiary}>Write now!</button>
+                        </div>}
+                        {diaryInput === 1 && <textarea className='w-full h-24 border border-black rounded-xl' placeholder='  Write your day <3'/> }
                     </div>
                 </div>
 
