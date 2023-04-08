@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+import DefaultLayout from './layouts';
 import puplicRoutes from './routes';
 
 export default function App () {
@@ -14,7 +15,10 @@ export default function App () {
                                 key={index}
                                 path={route.path}
                                 element={
-                                    <Page />
+                                    <DefaultLayout>
+                                        <Page />
+                                    </DefaultLayout>
+
                                 }
                             />
                         );

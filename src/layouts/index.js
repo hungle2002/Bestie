@@ -1,8 +1,10 @@
-/* eslint-disable react/prop-types */
-function DefaultLayout ({ children, title }) {
+import Header from './Header';
+
+function DefaultLayout ({ children }) {
     return (
-        <div className="gap-0 min-w-full">
-            <div className="bg-orange-300">{children}</div>
+        <div className="gap-0 min-w-full h-full">
+            <div className='h-20 mb-4'><Header /></div>
+            {children}
         </div>
     );
 }
