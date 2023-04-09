@@ -115,7 +115,7 @@ const DiaryTimeLine = ({ w, h, diary }) => {
                 scrollable={{ scrollbar: false }}
                 // enableDarkToggle
                 cardHeight={0}
-                cardWidth={250}
+                cardWidth={500}
                 borderLessCards={true}
                 allowDynamicUpdate={true}
                 showAllCardsHorizontal={true}
@@ -131,16 +131,16 @@ const DiaryTimeLine = ({ w, h, diary }) => {
             >
                 {
                     items.map((item, index) => {
-                        return <div key={index} className='flex flex-row w-full'>
-                            <div className='w-52'>
+                        return <div key={index} className=' flex flex-row w-full justify-between items-start'>
+                            <div className='flex-1  min-w-52'>
                                 <h1 className='text-lg font-semibold'>{item.header}</h1>
                                 <p>{item.content}</p>
                             </div>
-                            <div>
-                                <div className=''>
+                            <div className='flex flex-row items-center justify-end gap-[20px]'>
+                                <div className='flex flex-row justify-end items-center'>
                                     {item.current && <FontAwesomeIcon icon={faArrowLeft} className='p-0 text-lg'/>}
                                 </div>
-                                <div className='rounded-[20px] w-[100px] h-fit border flex justify-center items-center'>{item.type}</div>
+                                <div className='rounded-[20px] w-fit h-fit border flex justify-center items-center p-2 bg-green-100 font-semibold'>{item.type}</div>
                             </div>
                         </div>;
                     })
