@@ -25,6 +25,7 @@ module.exports = {
         semi: ['error', 'always'],
         'simple-import-sort/imports': 'error',
         'simple-import-sort/exports': 'error',
-        'react/prop-types': 'off'
+        'react/prop-types': 'off',
+        'max-len': ['warn', 1000]
     }
 };
