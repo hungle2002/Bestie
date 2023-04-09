@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import ReactDOM from 'react-dom';
 
-import images from '../assets/images';
 import { randInt } from '../utils/math';
 
 export const Toast = ({ message = 'I am waiting for your', callback, close }) => {
@@ -25,16 +24,15 @@ export const Toast = ({ message = 'I am waiting for your', callback, close }) =>
             top,
             right
         }}
-        className={'w-[300px] flex flex-col flex-start p-2 fixed z-50 border-2 border-zinc-600 rounded-md bg-white'}
+        className={'w-[300px] flex flex-col flex-start p-2 fixed z-50 border-2 border-zinc-600 rounded-md bg-white cursor-pointer'}
         onClick={(e) => {
-            if (e.currentTarget === e.target) {
-                callback();
-                close();
-            }
+            console.log('Pop up onclick');
+            callback();
+            close();
         }}
     >
         <div>
-            <img className='w-18 h-14' src={images.logoMini}/>
+            <img className='w-18 h-14' src={'http://localhost:3000/logo-mini.png'}/>
         </div>
         <div className='flex flex-col flex-start gap-2'>
             <p className='text-xl'>{message}</p>

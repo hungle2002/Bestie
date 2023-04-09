@@ -9,9 +9,9 @@ import Plan from '../../components/plan';
 import { createToast, Toast } from '../../components/toast';
 ;
 function HomePage () {
-    useEffect(() => {
-        createToast('hello world', () => { console.log('callback'); });
-    }, 1000);
+    // useEffect(() => {
+    //     createToast('hello world', () => { console.log('callback'); });
+    // }, 1000);
 
     const dataLineChart = {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
