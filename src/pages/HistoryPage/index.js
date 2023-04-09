@@ -26,38 +26,38 @@ const HistoryPage = (props) => {
         },
         {
             title: '6/4/2023',
-            content: 'Overnight with friend for design UI of UWC project',
-            header: 'Design UX/UI',
-            type: 'UWC project'
+            content: 'One day sleepless for deployemnt',
+            header: 'Packaging application',
+            type: 'Bestie'
         },
         {
             title: '5/4/2023',
-            content: 'Fine by police went hang out with friend',
+            content: 'I love my family',
             header: 'Farther birthday',
             type: 'Family'
         },
         {
             title: '4/4/2023',
-            content: 'Overnight with friend for design UI of UWC project',
-            header: 'Design UX/UI',
-            type: 'UWC project'
+            content: 'I just have 4 hours slept all of week',
+            header: 'Web implementation',
+            type: 'Bestie project'
         },
         {
             title: '3/4/2023',
-            content: 'Overnight with friend for design UI of UWC project',
-            header: 'Design UX/UI',
-            type: 'UWC project'
+            content: 'I feel so happy when my app come to this stage',
+            header: 'Chrome extension for Bestie',
+            type: 'Bestie'
         },
         {
             title: '2/4/2023',
-            content: 'Get only 4.5 scores on IETLS online testing',
-            header: 'IETLS self-study',
+            content: 'Get only 6.5 scores on IETLS online testing',
+            header: 'Bestie Project',
             type: 'Self-study'
         },
         {
             title: '1/4/2023',
             content: 'Overnight with friend for design UI of UWC project',
-            header: 'Design UX/UI',
+            header: 'UX/UI',
             type: 'UWC project'
         },
         {
