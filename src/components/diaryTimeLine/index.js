@@ -83,66 +83,22 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Chrono } from 'react-chrono';
 
-const DiaryTimeLine = ({ w, h }) => {
-    const dates = [
-        {
-            title: '1/2023'
-        },
-        {
-            title: '1/2023'
-        }, {
-            title: '1/2023'
-        }, {
-            title: '1/2023'
-        },
-        {
-            title: '1/2023'
-        },
-        {
-            title: '1/2023'
-        },
-        {
-            title: '1/2023'
-        },
-        {
-            title: '1/2023'
-        }
-    ];
-    const items = [
-        {
-            content: 'Overnight with friend hahaha',
-            header: 'UI design'
-        },
-        {
-            content: 'Overnight with friend',
-            header: 'UI design'
-        },
-        {
-            content: 'Overnight with friend',
-            header: 'UI design'
-        },
-        {
-            content: 'Overnight with friend',
-            header: 'UI design'
-        },
-        {
-            content: 'Overnight with friend',
-            header: 'UI design'
-        },
-        {
-            content: 'Overnight with friend',
-            header: 'UI design'
-        },
-        {
-            content: 'Overnight with friend',
-            header: 'UI design'
-        },
-        {
-            content: 'Overnight with friend',
-            header: 'UI design'
-        }
+const DiaryTimeLine = ({ w, h, diary }) => {
+    const dates =
+        diary.map((d) => {
+            return {
+                title: d.title
+            };
+        });
+    const items = diary.map((d) => {
+        return {
+            content: d.content,
+            header: d.header,
+            current: !!d.current,
+            type: d.type
+        };
+    });
 
-    ];
     return (
         <div
             style={{
@@ -159,7 +115,7 @@ const DiaryTimeLine = ({ w, h }) => {
                 scrollable={{ scrollbar: false }}
                 // enableDarkToggle
                 cardHeight={0}
-                cardWidth={250}
+                cardWidth={500}
                 borderLessCards={true}
                 allowDynamicUpdate={true}
                 showAllCardsHorizontal={true}
@@ -175,13 +131,16 @@ const DiaryTimeLine = ({ w, h }) => {
             >
                 {
                     items.map((item, index) => {
-                        return <div key={index} className='flex flex-row'>
-                            <div className='w-52'>
+                        return <div key={index} className=' flex flex-row w-full justify-between items-start'>
+                            <div className='flex-1  min-w-52'>
                                 <h1 className='text-lg font-semibold'>{item.header}</h1>
                                 <p>{item.content}</p>
                             </div>
-                            <div>
-                                <FontAwesomeIcon icon={faArrowLeft} className='p-0 text-lg'/>
+                            <div className='flex flex-row items-center justify-end gap-[20px]'>
+                                <div className='flex flex-row justify-end items-center'>
+                                    {item.current && <FontAwesomeIcon icon={faArrowLeft} className='p-0 text-lg'/>}
+                                </div>
+                                <div className='rounded-[20px] w-fit h-fit border flex justify-center items-center p-2 bg-green-100 font-semibold'>{item.type}</div>
                             </div>
                         </div>;
                     })
