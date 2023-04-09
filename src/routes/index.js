@@ -1,6 +1,8 @@
 /* eslint-disable max-len */
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
+import Images from '../assets/images';
 import routes from '../config/routes';
 import ChattingPage from '../pages/ChattingPage';
 import HistoryPage from '../pages/HistoryPage';
@@ -12,13 +14,16 @@ const TempPage = () => {
     const [mood, setMood] = useState('normal');
 
     return (
-        <div className="h-[600px] w-[400px] bg-pink-200">
-            <h1>Hello world</h1>
-            <div>
-                <h1 className="text-md font-bold">Scenario</h1>
+        <div className="flex flex-col h-[600px] w-[400px] shadow sm:rounded-md">
+            <div className='p-3'>
+                <Link to='/home'><img className='w-auto h-16' src={Images.logoMini}/></Link>
+            </div>
+
+            <div className='p-3'>
+                <h1 className="text-xl font-bold font-poppins ">Scenario</h1>
                 <div>
                     <div>
-                        <input type="radio" name="Start of day" onClick={() => {
+                        <input className="" type="radio" name="Start of day" onClick={() => {
                             setScenario('start');
                         }} checked={scenario === 'start'} /> Start
                     </div>
@@ -41,7 +46,7 @@ const TempPage = () => {
                     </div>
                 </div>
             </div>
-            <button className='p-4 bg-pink-600 text-white font-medium rounded-md'>Set scenario</button>
+            <button className='p-4 bg-pink-600 text-white font-medium rounded-md w-56'>Set scenario</button>
         </div>
 
     );

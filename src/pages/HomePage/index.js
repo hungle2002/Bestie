@@ -1,7 +1,9 @@
 /* eslint-disable max-len */
 
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 
+import { AppContext } from '../../App';
+import Quote from '../../components/dayQuote';
 import DiscordBox from '../../components/Discord';
 import LineChartBox from '../../components/lineChart';
 import NotionTodo from '../../components/notionTodo';
@@ -13,13 +15,15 @@ function HomePage () {
     //     createToast('hello world', () => { console.log('callback'); });
     // }, 1000);
 
+    const appContext = useContext(AppContext);
+    const evalData = appContext.evalMarks;
     const dataLineChart = {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets: [
             {
                 label: 'Progress',
                 // yAxisID: 'consumption',
-                data: [70, 90, 50, 60, 30, 40, 20],
+                data: evalData,
                 fill: true,
                 borderColor: 'rgba(0, 82, 255, 1)',
                 backgroundColor: 'rgba(0, 82, 255, 0.2)',
