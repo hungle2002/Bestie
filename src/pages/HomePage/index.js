@@ -1,7 +1,15 @@
+import { useEffect } from 'react';
+
 import Quote from '../../components/dayQuote';
 import LineChartBox from '../../components/lineChart';
-import NotionTodo from '../../components/notionTodo'; ;
+import NotionTodo from '../../components/notionTodo';
+import { createToast, Toast } from '../../components/toast';
+;
 function HomePage () {
+    useEffect(() => {
+        createToast('hello world', () => { console.log('callback'); });
+    }, 1000);
+
     const dataLineChart = {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets: [
@@ -32,6 +40,7 @@ function HomePage () {
                 </div>
             </div>
             <Quote/>
+            {/* <Toast /> */}
         </div>);
 }
 
