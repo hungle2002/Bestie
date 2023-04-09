@@ -6,8 +6,8 @@ function Header () {
     return (
         <div className='flex flex-col h-full w-full '>
             <div className="h-full px-48 flex flex-row justify-between items-center">
-                <div className="font-bold text-4xl" >
-                    <img className='mt-4 w-36 h-36 mx-4' src={Images.logo}/>
+                <div className="font-bold text-4xl h-full flex flex-col justify-center items-center " >
+                    <img className=' w-36 h-fit mx-4' src={Images.logoMini}/>
                 </div>
                 <div className="space-x-20 flex flex-row font-semibold text-lg">
                     {direction.map((direct, index) => {
