@@ -11,8 +11,7 @@ function Header () {
                 </div>
                 <div className="space-x-20 flex flex-row font-semibold text-lg">
                     {direction.map((direct, index) => {
-                        const url = window.location.href;
-                        const isPage = url.includes(direct.path);
+                        console.log(direction);
                         return (<div key = {index} >
                             <Link to={direct.path}>{direct.title}</Link>
                         </div>);

@@ -87,22 +87,18 @@ const publicRoutes = [
 
 export const direction = [{
     path: routes.home,
-    component: HomePage,
     title: 'Dashboard'
 },
 {
     path: routes.history,
-    component: HistoryPage,
     title: 'Show diary'
 },
 {
     path: routes.plan,
-    component: HistoryPage,
     title: 'Planning'
 },
 {
     path: routes.summary,
-    component: SummaryPage,
     title: 'About us'
 }];
 
