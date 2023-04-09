@@ -137,7 +137,7 @@ const DiaryTimeLine = ({ w, h, diary }) => {
                                 <p>{item.content}</p>
                             </div>
                             <div>
-                                <div>
+                                <div className=''>
                                     {item.current && <FontAwesomeIcon icon={faArrowLeft} className='p-0 text-lg'/>}
                                 </div>
                                 <div className='rounded-[20px] w-[100px] h-fit border flex justify-center items-center'>{item.type}</div>
