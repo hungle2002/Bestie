@@ -18,7 +18,8 @@ export default function App () {
             title: '1/2023',
             content: 'Content',
             header: 'Header',
-            type: 'project A'
+            type: 'project A',
+            current: true
         },
         {
             title: '1/2023',

@@ -83,66 +83,22 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Chrono } from 'react-chrono';
 
-const DiaryTimeLine = ({ w, h }) => {
-    const dates = [
-        {
-            title: '1/2023'
-        },
-        {
-            title: '1/2023'
-        }, {
-            title: '1/2023'
-        }, {
-            title: '1/2023'
-        },
-        {
-            title: '1/2023'
-        },
-        {
-            title: '1/2023'
-        },
-        {
-            title: '1/2023'
-        },
-        {
-            title: '1/2023'
-        }
-    ];
-    const items = [
-        {
-            content: 'Overnight with friend hahaha',
-            header: 'UI design'
-        },
-        {
-            content: 'Overnight with friend',
-            header: 'UI design'
-        },
-        {
-            content: 'Overnight with friend',
-            header: 'UI design'
-        },
-        {
-            content: 'Overnight with friend',
-            header: 'UI design'
-        },
-        {
-            content: 'Overnight with friend',
-            header: 'UI design'
-        },
-        {
-            content: 'Overnight with friend',
-            header: 'UI design'
-        },
-        {
-            content: 'Overnight with friend',
-            header: 'UI design'
-        },
-        {
-            content: 'Overnight with friend',
-            header: 'UI design'
-        }
+const DiaryTimeLine = ({ w, h, diary }) => {
+    const dates =
+        diary.map((d) => {
+            return {
+                title: d.title
+            };
+        });
+    const items = diary.map((d) => {
+        return {
+            content: d.content,
+            header: d.header,
+            current: !!d.current,
+            type: d.type
+        };
+    });
 
-    ];
     return (
         <div
             style={{
@@ -175,13 +131,16 @@ const DiaryTimeLine = ({ w, h }) => {
             >
                 {
                     items.map((item, index) => {
-                        return <div key={index} className='flex flex-row'>
+                        return <div key={index} className='flex flex-row w-full'>
                             <div className='w-52'>
                                 <h1 className='text-lg font-semibold'>{item.header}</h1>
                                 <p>{item.content}</p>
                             </div>
                             <div>
-                                <FontAwesomeIcon icon={faArrowLeft} className='p-0 text-lg'/>
+                                <div>
+                                    {item.current && <FontAwesomeIcon icon={faArrowLeft} className='p-0 text-lg'/>}
+                                </div>
+                                <div className='rounded-[20px] w-[100px] h-fit border flex justify-center items-center'>{item.type}</div>
                             </div>
                         </div>;
                     })

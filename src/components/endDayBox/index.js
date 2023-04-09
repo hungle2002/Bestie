@@ -191,7 +191,14 @@ function EndDayBox () {
                                 >Evaluate yourself
                                 </label>
                             </div>
-
+                            <div className='w-full flex flex-row justify-end items-center'>
+                                <button className="border bg-blue-500 text-white font-medium px-2 py-2 text-sm rounded-xl mt-4"
+                                    onClick={() => {
+                                        setEvalInput('');
+                                        // handleFocus();
+                                    }
+                                    }>Evaluate</button>
+                            </div>
                         </div>
                     </div>
 
