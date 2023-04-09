@@ -49,7 +49,9 @@ function Quote () {
                             <div className="flex flex-row ">
                                 <div className="basis-2/3 mt-10">
                                     <h1 className="text-xl text-slate-400 font-medium">What's the quote today ?</h1>
-                                    <h1 className='font-sans text-3xl mt-6 italic text-zinc-500'>"{mood === 'normal' ? 'Success is not final, failure is not fatal: it is the courage to continue that counts.' : 'I know you are having the difficult time. What make you upset :(. Can you share it with me?'}"</h1>
+                                    <h1 className='font-sans text-3xl mt-6 italic text-zinc-500'>"{mood === 'normal'
+                                        ? 'Success is not final, failure is not fatal: it is the courage to continue that counts.'
+                                        : 'Remember that you have already got 5 days sleepless, A lot of achievements with Bestie project, so keep going, I trust in you'}"</h1>
                                     <p className='text-lg text-right mt-2'>-Winston Churchill-</p>
                                 </div>
                                 <div className="basis-1/3">
