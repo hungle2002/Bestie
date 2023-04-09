@@ -55,7 +55,11 @@ const App = () => {
                 // } else if (data.scenario === 'end') {
                 //     setShowEndDayBox(true);
                 // }
+                console.log('Localhost');
+                console.log(data);
+                global.scenarioData = data;
                 window.scenarioData = data;
+                window.localStorage.setItem('data', JSON.stringify(data));
             }
         };
 
