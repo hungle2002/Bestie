@@ -9,15 +9,15 @@ function Plan () {
     const adiary = appContext.diaries;
     return (<div>
         <div className='text-center w-full flex flex-row justify-center items-center space-x-4'>
-            <FontAwesomeIcon icon={faHandPointRight} className='h-12 w-12'/>
-            <div className='bg-violet-500 w-fit border p-4 rounded-xl '>
-                <h1 className='text-2xl text-white font-semibold'>
+            <FontAwesomeIcon icon={faHandPointRight} className='h-9 w-9'/>
+            <div className='bg-violet-500 w-fit border p-2 rounded-xl '>
+                <h1 className='text-xl text-white font-semibold'>
                                 Graduate in 2024!</h1>
             </div>
         </div>
         <div className='flex flex-row w-full'>
             <div className='w-full h-full basis-2/3 -left-8'>
-                <DiaryTimeLine w={830} h = {540} diary={adiary}/>
+                <DiaryTimeLine w={830} h = {700} diary={adiary}/>
             </div>
         </div>
     </div>);
