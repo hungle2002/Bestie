@@ -1,16 +1,18 @@
 /* eslint-disable max-len */
 
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import { AppContext } from '../../App';
 import Calendar from '../../components/calendar';
 import Quote from '../../components/dayQuote';
 import DiscordBox from '../../components/Discord';
+import EndDayBox from '../../components/endDayBox';
 import LineChartBox from '../../components/lineChart';
 import NotionTodo from '../../components/notionTodo';
 import Plan from '../../components/plan';
 import { createToast, Toast } from '../../components/toast';
 ;
+
 function HomePage () {
     // useEffect(() => {
     //     createToast('hello world', () => { console.log('callback'); });
@@ -33,6 +35,21 @@ function HomePage () {
             }
         ]
     };
+    let start = appContext.data.scenario;
+    const [open, setOpen] = useState(false);
+
+    const handleOpen = () => {
+        const timer = setTimeout(() => {
+            start = appContext.data.scenario;
+            if (start) {
+                setOpen(start === 'end');
+            }
+        }, 1000);
+        return () => clearTimeout(timer);
+    };
+    useEffect(() => {
+        handleOpen();
+    }, [appContext.data]);
 
     return (
         <div>
@@ -53,6 +70,25 @@ function HomePage () {
             </div>
             {/* <Toast /> */}
             <Quote/>
+            {open &&
+            <>
+                <div
+                    // eslint-disable-next-line max-len
+                    className="fixed z-40 left-0 top-0 w-screen h-screen bg-zinc-100 opacity-50 cursor-pointer"
+                ></div>
+                <div
+                    // eslint-disable-next-line max-len
+                    className="fixed left-0 top-0 z-50 w-screen h-screen flex justify-center items-center"
+                    onClick={(e) => {
+                        if (e.target === e.currentTarget) {
+                            setOpen(false);
+                        }
+                    }}
+                >
+                    <EndDayBox></EndDayBox>
+                </div>
+            </>
+            }
         </div>);
 }
 

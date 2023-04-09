@@ -9,7 +9,6 @@ import Lottie from 'react-lottie';
 import animationData from '../../lotties/writing.json';
 import TimeTable from '../animatedElements/TimeTable';
 import ChartBox from './chart';
-
 function EndDayBox () {
     const [diaryInput, setDiaryInput] = useState(0);
     const [evalInput, setEvalInput] = useState('');

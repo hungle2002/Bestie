@@ -16,18 +16,20 @@ function Quote () {
         }
     };
     const appContext = useContext(AppContext);
-    const start = appContext.data.scenario;
-    console.log(start);
+    let start = appContext.data.scenario;
+    let mood = appContext.data.mood;
     const [open, setOpen] = useState(false);
     const handleOpen = () => {
         const timer = setTimeout(() => {
-            setOpen(true);
+            start = appContext.data.scenario;
+            mood = appContext.data.mood;
+            setOpen(start === 'start');
         }, 1000);
         return () => clearTimeout(timer);
     };
     useEffect(() => {
         handleOpen();
-    }, []);
+    }, [appContext.data]);
     return (<div className="flex flex-col items-center py-16">
         <div className="h-32 w-32">
             <Transition
@@ -47,7 +49,7 @@ function Quote () {
                             <div className="flex flex-row ">
                                 <div className="basis-2/3 mt-10">
                                     <h1 className="text-xl text-slate-400 font-medium">What's the quote today ?</h1>
-                                    <h1 className='font-sans text-3xl mt-6 italic text-zinc-500'>{normalMood ? 'Success is not final, failure is not fatal: it is the courage to continue that counts.' : ''}</h1>
+                                    <h1 className='font-sans text-3xl mt-6 italic text-zinc-500'>"{mood === 'normal' ? 'Success is not final, failure is not fatal: it is the courage to continue that counts.' : 'I know you are having the difficult time. What make you upset :(. Can you share it with me?'}"</h1>
                                     <p className='text-lg text-right mt-2'>-Winston Churchill-</p>
                                 </div>
                                 <div className="basis-1/3">

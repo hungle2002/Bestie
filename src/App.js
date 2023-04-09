@@ -95,7 +95,7 @@ export default function App () {
             type: 'Bestie project'
         }
     ]);
-    const [evalMarks, setEvalMarks] = useState([70, 90, 50, 60, 30, 40, 20]);
+    const [evalMarks, setEvalMarks] = useState([]);
     const [todos, setTodos] = useState({
         today: [{
             title: 'Todo title',
@@ -116,15 +116,25 @@ export default function App () {
             due: '17-4-2023'
         }]
     });
-    const [data, setData] = useState({});
+    const [data, setData] = useState({
+        mood: 'normal',
+        scenario: ''
+    });
     useEffect(() => {
         window.localStorage.clear();
         const timer = setTimeout(() => {
-            console.log(JSON.parse(window.localStorage.getItem('data')));
+            // const data = JSON.parse(window.localStorage.getItem('data'));
             setData(JSON.parse(window.localStorage.getItem('data')));
-        }, 2000);
+        }, 500);
         return () => clearTimeout(timer);
     }, []);
+    useEffect(() => {
+        if (data.mood === 'normal') {
+            setEvalMarks([80, 70, 80, 90, 80, 80, 90]);
+        } else {
+            setEvalMarks([70, 60, 60, 50, 30, 40, 30]);
+        }
+    }, [data]);
     return (
         <AppContext.Provider
             value = {{
