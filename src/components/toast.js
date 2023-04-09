@@ -20,6 +20,14 @@ export const Toast = ({ message = 'I am waiting for your', callback, close }) =>
     }
     console.log(top, right, '<--');
     return <motion.div
+        initial={{ x: 400, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{
+            duration: 1.2,
+            type: 'spring',
+            damping: 10,
+            stiffness: 100
+        }}
         style={{
             top,
             right
