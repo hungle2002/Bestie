@@ -64,7 +64,7 @@ const App = () => {
     return (
         <div className="flex flex-col h-[600px] w-[400px] shadow sm:rounded-md">
             <div className='p-3 px-4'>
-                <a href='localhost:3000/home'><img className='w-auto h-16' src={'localhost:3000/logo-mini.png'}/></a>
+                <a href='localhost:3000/home'><h1 className="text-pink-500 font-bold text-3xl">Bestie</h1></a>
             </div>
 
             <div className='pb-3 px-6'>
