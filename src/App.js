@@ -59,14 +59,15 @@ export default function App () {
     const [diaries, setDiaries] = useState([
         {
             title: '8/2023',
-            header: 'Codgen for MIPS',
+            header: 'Codegen for MIPS',
+            content: 'Assignment for PPL course',
             type: 'PPL project'
         },
         {
             title: '7/2023',
-            header: 'Host server on Haroku',
-            type: 'Bestie project',
-            current: true
+            header: 'Host server',
+            content: 'Finding and choose a server (Heroku)',
+            type: 'Bestie project'
         },
         {
             title: '6/2023',
@@ -78,16 +79,17 @@ export default function App () {
             title: '4/2023',
             content: 'Draw EERD and mapping design',
             header: 'Design database',
-            type: 'Self project'
+            type: 'Self project',
+            current: true
         },
         {
-            title: '2/2023',
+            title: '12/2022',
             content: 'Complete all details for my English project',
             header: 'Brainstorm',
             type: 'Self project'
         },
         {
-            title: '11/2022',
+            title: '11/2023',
             content: 'Complete UI design for dashboard and statistic page',
             header: 'UI design',
             type: 'Bestie project'

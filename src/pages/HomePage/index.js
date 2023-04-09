@@ -11,9 +11,9 @@ import Plan from '../../components/plan';
 import { createToast, Toast } from '../../components/toast';
 ;
 function HomePage () {
-    useEffect(() => {
-        createToast('hello world', () => { console.log('callback'); });
-    }, 1000);
+    // useEffect(() => {
+    //     createToast('hello world', () => { console.log('callback'); });
+    // }, 1000);
 
     const appContext = useContext(AppContext);
     const evalData = appContext.evalMarks;
