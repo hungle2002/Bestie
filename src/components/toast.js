@@ -46,7 +46,7 @@ export const Toast = ({ message = 'I am waiting for your', callback, close }) =>
             <p className='text-xl'>{message}</p>
         </div>
         <div
-            className='absolute top-1 right-2 cursor-pointer'
+            className='absolute top-1 right-2 cursor-pointer p-1'
             onClick={() => {
                 if (countClose === 2) {
                     close();
