@@ -2,7 +2,8 @@ const routes = {
     home: '/home',
     chatting: '/chatting',
     summary: '/summary',
-    history: '/history'
+    history: '/history',
+    plan: '/plan'
 };
 
 export default routes;

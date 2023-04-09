@@ -128,7 +128,22 @@ const publicRoutes = [
     {
         path: routes.home,
         component: HomePage,
-        title: 'Home page title'
+        title: 'Dashboard'
+    },
+    {
+        path: routes.history,
+        component: HistoryPage,
+        title: 'Show diary'
+    },
+    {
+        path: routes.plan,
+        component: HistoryPage,
+        title: 'Planning'
+    },
+    {
+        path: routes.summary,
+        component: SummaryPage,
+        title: 'About us'
     },
     {
         path: routes.chatting,
@@ -136,20 +151,27 @@ const publicRoutes = [
         title: 'Chatting page title'
     },
     {
-        path: routes.summary,
-        component: SummaryPage,
-        title: 'Summary page title'
-    },
-    {
-        path: routes.history,
-        component: HistoryPage,
-        title: 'history page title'
-    },
-    {
         path: '/temp',
         component: TempPage,
         title: 'Temp page for test'
     }
 ];
+
+export const direction = [{
+    path: routes.home,
+    title: 'Dashboard'
+},
+{
+    path: routes.history,
+    title: 'Show diary'
+},
+{
+    path: routes.plan,
+    title: 'Planning'
+},
+{
+    path: routes.summary,
+    title: 'About us'
+}];
 
 export default publicRoutes;
