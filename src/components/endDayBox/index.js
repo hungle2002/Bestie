@@ -195,7 +195,7 @@ function EndDayBox () {
                                     onClick={() => {
                                         // setEvalInput('');
                                         // handleFocus(false);
-                                        createToast("I'm happy to see you grow over the day!!!");
+                                        createToast("I'm happy to see you grow over the day!!!", () => { });
                                     }
                                     }
                                 >Evaluate</button>

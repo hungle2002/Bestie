@@ -35,6 +35,7 @@ export const Toast = ({ message = 'I am waiting for your', callback, close }) =>
         className={'w-[300px] flex flex-col flex-start p-2 fixed z-50 border-2 border-zinc-600 rounded-md bg-white cursor-pointer text-zinc-800'}
         onClick={(e) => {
             console.log('Pop up onclick');
+            e.stopPropagation();
             callback();
             close();
         }}
@@ -47,12 +48,13 @@ export const Toast = ({ message = 'I am waiting for your', callback, close }) =>
         </div>
         <div
             className='absolute top-1 right-2 cursor-pointer p-1'
-            onClick={() => {
-                if (countClose === 2) {
-                    close();
-                } else {
-                    setCountClose(x => x + 1);
-                }
+            onClick={(e) => {
+                // if (countClose === 2) {
+                e.stopPropagation();
+                close();
+                // } else {/
+                // setCountClose(x => x + 1);
+                // }
             }}
         >
             <FontAwesomeIcon icon={faXmark} />
