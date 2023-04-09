@@ -151,7 +151,6 @@ export default function App () {
                                         <DefaultLayout>
                                             <Page />
                                         </DefaultLayout>
-
                                     }
                                 />
                             );

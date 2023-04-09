@@ -1,8 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Transition } from '@headlessui/react';
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useContext, useEffect, useState } from 'react';
 import Lottie from 'react-lottie';
 
+import { AppContext } from '../../App';
 import animationData from '../../lotties/quote.json';
 /* eslint-disable max-len */
 function Quote () {
@@ -14,6 +15,9 @@ function Quote () {
             preserveAspectRatio: 'xMidYMid slice'
         }
     };
+    const appContext = useContext(AppContext);
+    const start = appContext.data.scenario;
+    console.log(start);
     const [open, setOpen] = useState(false);
     const handleOpen = () => {
         const timer = setTimeout(() => {
@@ -43,7 +47,7 @@ function Quote () {
                             <div className="flex flex-row ">
                                 <div className="basis-2/3 mt-10">
                                     <h1 className="text-xl text-slate-400 font-medium">What's the quote today ?</h1>
-                                    <h1 className='font-sans text-3xl mt-6 italic text-zinc-500'>"Success is not final, failure is not fatal: it is the courage to continue that counts."</h1>
+                                    <h1 className='font-sans text-3xl mt-6 italic text-zinc-500'>{normalMood ? 'Success is not final, failure is not fatal: it is the courage to continue that counts.' : ''}</h1>
                                     <p className='text-lg text-right mt-2'>-Winston Churchill-</p>
                                 </div>
                                 <div className="basis-1/3">
