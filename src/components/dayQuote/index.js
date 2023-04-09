@@ -22,7 +22,7 @@ function Quote () {
         return () => clearTimeout(timer);
     };
     useEffect(() => {
-        // handleOpen();
+        handleOpen();
     }, []);
     return (<div className="flex flex-col items-center py-16">
         <div className="h-32 w-32">

@@ -52,6 +52,7 @@ function HomePage () {
                 </div>
             </div>
             {/* <Toast /> */}
+            <Quote/>
         </div>);
 }
 
