@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import DefaultLayout from './layouts';
@@ -116,9 +116,20 @@ export default function App () {
             due: '17-4-2023'
         }]
     });
+    const [data, setData] = useState({});
+    useEffect(() => {
+        window.localStorage.clear();
+        const timer = setTimeout(() => {
+            console.log(JSON.parse(window.localStorage.getItem('data')));
+            setData(JSON.parse(window.localStorage.getItem('data')));
+        }, 2000);
+        return () => clearTimeout(timer);
+    }, []);
     return (
         <AppContext.Provider
             value = {{
+                data,
+                setData,
                 diaries,
                 setDiaries,
                 evalMarks,
