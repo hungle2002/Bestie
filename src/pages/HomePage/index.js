@@ -3,6 +3,7 @@
 import { useContext, useEffect } from 'react';
 
 import { AppContext } from '../../App';
+import Calendar from '../../components/calendar';
 import Quote from '../../components/dayQuote';
 import DiscordBox from '../../components/Discord';
 import LineChartBox from '../../components/lineChart';
@@ -36,11 +37,12 @@ function HomePage () {
     return (
         <div>
             <div className='px-48 flex flex-row w-full gap-12 '>
-                <div className='basis-3/5 flex flex-col gap-6'>
+                <div className='basis-3/5 flex flex-col'>
                     <div className=' basis-6/12'>
                         <LineChartBox title={'Working Progress Self'} data={dataLineChart}/>
                     </div>
-                    <div className='bg-green-300 basis-6/12'><NotionTodo/></div>
+                    <div className=' basis-6/12'><Calendar/></div>
+                    <div className=' basis-6/12'><NotionTodo/></div>
                 </div>
                 <div className='basis-2/5 flex flex-col gap-6 '>
                     <div className='basis-9/12 rounded-xl shadow-lg space-y-4 pt-4'>
