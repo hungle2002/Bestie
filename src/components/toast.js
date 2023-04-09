@@ -49,12 +49,12 @@ export const Toast = ({ message = 'I am waiting for your', callback, close }) =>
         <div
             className='absolute top-1 right-2 cursor-pointer p-1'
             onClick={(e) => {
-                // if (countClose === 2) {
                 e.stopPropagation();
-                close();
-                // } else {/
-                // setCountClose(x => x + 1);
-                // }
+                if (countClose === 2) {
+                    close();
+                } else {
+                    setCountClose(x => x + 1);
+                }
             }}
         >
             <FontAwesomeIcon icon={faXmark} />
