@@ -36,7 +36,7 @@ function Quote () {
                 leaveFrom="opacity-100 rotate-0 scale-100 "
                 leaveTo="opacity-0 scale-95 "
             >
-                <div className='fixed top-0 left-0'>
+                <div className='fixed top-0 left-0 z-10'>
                     <div className="h-screen w-screen bg-black opacity-50 z-10"></div>
                     <div className='absolute top-0 left-0 flex justify-center items-center h-screen w-screen z-20' >
                         <div className="max-w-4xl border border-gray-300 rounded-lg p-10 shadow-xl bg-white">
