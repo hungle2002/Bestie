@@ -74,11 +74,11 @@ const HistoryPage = (props) => {
         }
     ];
     return (
-        <div className='flex justify-center gap-0 px-48 items-center'>
+        <div className='flex justify-center gap-0 px-[440px] items-center mt-20'>
             <DiaryTimeline w={1000} h = {800} diary={adiary} />
             <Lottie options={defaultOptions}
                 height={500}
-                width={500}
+                width={300}
             />
         </div>
     );
