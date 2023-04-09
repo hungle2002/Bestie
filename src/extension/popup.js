@@ -19,11 +19,46 @@ link.href = chrome.runtime.getURL('build/content.css');
 document.head.appendChild(link);
 
 const App = () => {
+    const [scenario, setScenario] = useState('start');
+    const [mood, setMood] = useState('normal');
+
     return (
         <div className="h-[600px] w-[400px] bg-pink-200">
             <h1>Hello world</h1>
+            <div>
+                <h1 className="text-md font-bold">Scenario</h1>
+                <div>
+                    <div>
+                        <input type="radio" name="Start of day" onClick={() => {
+                            setScenario('start');
+                        }} checked={scenario === 'start'} /> Start
+                    </div>
+                    {scenario === 'start' && <div>
+                        <div>
+                            <input type="radio" name="Normal day" onClick={() => {
+                                setMood('normal');
+                            }} checked={mood === 'normal'} /> Normal day
+                        </div>
+                        <div>
+                            <input type="radio" name="Bad day" onClick={() => {
+                                setMood('bad');
+                            }} checked={mood === 'bad'} /> Bad day
+                        </div>
+                    </div>}
+                    <div>
+                        <input type="radio" value="End of day" onClick={() => {
+                            setScenario('end');
+                        }} checked={scenario === 'end'}/> End
+                    </div>
+                </div>
+            </div>
+            <button
+                onClick={() => {
+                    chrome.storage.sync.set({ scenario, mood });
+                }}
+                className='p-4 bg-pink-600 text-white font-medium rounded-md'
+            >Set scenario</button>
         </div>
-
     );
 };
 
