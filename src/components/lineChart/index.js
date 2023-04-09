@@ -44,9 +44,9 @@ const LineChartBox = ({ title, data }) => {
     const options = option;
     return (
         <div className="flex flex-col h-full gap-4">
-            <h1 className='text-4xl'>{title} Evaluate</h1>
-            <p className='text-xl text-gray-500 gap-4 flex items-center'>Last 7 days {<FontAwesomeIcon icon={faClock} className='text-gray-500'/>}</p>
-            <div className="flex h-96 items-center justify-center p-3">
+            <h1 className='text-2xl'>{title} Evaluate</h1>
+            <p className='text-gray-500 gap-4 flex items-center text-sm'>Last 7 days {<FontAwesomeIcon icon={faClock} className='text-gray-500'/>}</p>
+            <div className="flex h-80 items-center justify-center p-3">
                 <Line
                     data={data}
                     options={options} />
