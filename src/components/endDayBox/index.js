@@ -23,8 +23,8 @@ function EndDayBox () {
             preserveAspectRatio: 'xMidYMid slice'
         }
     };
-    const handleFocus = () => {
-        setEvalFocus((value) => !value);
+    const handleFocus = (value) => {
+        setEvalFocus(value);
     };
     const handelInput = ({ target }) => {
         setEvalInput((target.value).toString());
@@ -176,18 +176,17 @@ function EndDayBox () {
                             <div className="relative mb-3 w-[200px] border" data-te-input-wrapper-init>
                                 <input
                                     type="text"
-                                    className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none  [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 text-[50px]"
-                                    placeholder="Default input"
+                                    className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem]  outline-none  ease-linear text-[50px]"
                                     value={evalInput}
                                     onChange={handelInput}
-                                    onFocus={handleFocus}
-                                    onBlur={() => { setEvalInput(''); handleFocus(); }}
+                                    onFocus={() => handleFocus(true)}
+                                    // onBlur={() => { setEvalInput(''); handleFocus(); }}
                                 >
                                 </input>
                                 {evalFocus && <div className='absolute right-0 top-[50%] translate-y-[-50%] translate-x-[-10px] h-full flex justify-center items-center text-[50px] text-zinc-600'>/10</div>}
                                 <label
                                 // htmlFor="exampleFormControlInpu3"
-                                    className="bg-white pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-slate-700 text-lg font-medium transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
+                                    className="bg-white pointer-events-none absolute left-3 top-[-20px] mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-slate-700 text-lg font-medium"
                                 >Evaluate yourself
                                 </label>
                             </div>
@@ -195,9 +194,10 @@ function EndDayBox () {
                                 <button className="border bg-blue-500 text-white font-medium px-2 py-2 text-sm rounded-xl mt-4"
                                     onClick={() => {
                                         setEvalInput('');
-                                        // handleFocus();
+                                        handleFocus(false);
                                     }
-                                    }>Evaluate</button>
+                                    }
+                                >Evaluate</button>
                             </div>
                         </div>
                     </div>
