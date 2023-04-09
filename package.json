@@ -45,7 +45,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint:fix": "eslint --fix ./*.js",
-    "build:ext": "parcel build src/extension/content.js --dist-dir src/extension/build/ --no-cache",
+    "build:ext": "parcel build src/extension/content.js src/extension/popup.js --dist-dir src/extension/build/ --no-cache",
     "watch:ext": "parcel watch extension/content.js --dist-dir extension/build/"
   },
   "eslintConfig": {
