@@ -32,7 +32,7 @@ const App = () => {
         const init = async () => {
             const data = await chrome.storage.local.get(['mood', 'scenario']);
 
-            if (location.hostname === 'localhost') {
+            if (location.hostname !== 'localhost') {
                 setTimeout(() => {
                     if (data.scenario === 'start') {
                         createToast('Hello Hung, have a nice day!', () => {
@@ -45,15 +45,17 @@ const App = () => {
                     }
                 }, 2000);
             } else {
-                if (data.scenario === 'start') {
-                    if (data.mood === 'normal') {
-                        console.log('Normal day');
-                    } else if (data.mood === 'bad') {
-                        console.log('Bad day');
-                    }
-                } else if (data.scenario === 'end') {
-                    setShowEndDayBox(true);
-                }
+                // if (data.scenario === 'start') {
+
+                //     if (data.mood === 'normal') {
+                //         console.log('Normal day');
+                //     } else if (data.mood === 'bad') {
+                //         console.log('Bad day');
+                //     }
+                // } else if (data.scenario === 'end') {
+                //     setShowEndDayBox(true);
+                // }
+                window.scenarioData = data;
             }
         };
 
