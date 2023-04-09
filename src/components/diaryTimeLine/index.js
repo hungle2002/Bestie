@@ -144,7 +144,7 @@ const DiaryTimeLine = () => {
 
     ];
     return (
-        <div className='w-[420px] h-[520px]'>
+        <div className='w-[420px] h-[540px]'>
             <Chrono
                 items={dates}
                 mode="VERTICAL"

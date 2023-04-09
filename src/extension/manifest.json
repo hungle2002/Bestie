@@ -52,7 +52,8 @@
       {
         "resources": [
           "injection.js",
-          "build/content.css"
+          "build/content.css",
+          "build/popup.js"
         ],
         "matches": [
           "<all_urls>"

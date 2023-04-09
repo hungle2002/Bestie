@@ -1,11 +1,19 @@
 /* eslint-disable max-len */
 import { faHandPointRight } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useEffect } from 'react';
 
 import DiaryTimeLine from '../../components/diaryTimeLine';
+import DiscordBox from '../../components/Discord';
 import LineChartBox from '../../components/lineChart';
 import NotionTodo from '../../components/notionTodo';
+import { createToast, Toast } from '../../components/toast';
+;
 function HomePage () {
+    useEffect(() => {
+        createToast('hello world', () => { console.log('callback'); });
+    }, 1000);
+
     const dataLineChart = {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets: [
@@ -52,9 +60,10 @@ function HomePage () {
                             </div>
                         </div>
                     </div>
-                    <div className='bg-green-300 basis-3/12'>Discord</div>
+                    <div className='basis-3/12'> <DiscordBox/> </div>
                 </div>
             </div>
+            {/* <Toast /> */}
         </div>);
 }
 
