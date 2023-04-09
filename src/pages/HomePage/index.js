@@ -44,7 +44,7 @@ function HomePage () {
             if (start) {
                 setOpen(start === 'end');
             }
-        }, 1000);
+        }, 1200);
         return () => clearTimeout(timer);
     };
     useEffect(() => {

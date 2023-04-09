@@ -121,11 +121,10 @@ export default function App () {
         scenario: ''
     });
     useEffect(() => {
-        window.localStorage.clear();
         const timer = setTimeout(() => {
             // const data = JSON.parse(window.localStorage.getItem('data'));
             setData(JSON.parse(window.localStorage.getItem('data')));
-        }, 500);
+        }, 1000);
         return () => clearTimeout(timer);
     }, []);
     useEffect(() => {
