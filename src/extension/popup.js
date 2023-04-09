@@ -53,8 +53,11 @@ const App = () => {
                 </div>
             </div>
             <button
-                onClick={() => {
-                    chrome.storage.sync.set({ scenario, mood });
+                onClick={async () => {
+                    console.log('Button on click');
+                    await chrome.storage.local.set({ scenario, mood });
+                    await localStorage.setItem('scenario', scenario);
+                    await localStorage.setItem('mood', mood);
                 }}
                 className='p-4 bg-pink-600 text-white font-medium rounded-md'
             >Set scenario</button>
