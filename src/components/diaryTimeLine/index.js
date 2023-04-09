@@ -144,7 +144,13 @@ const DiaryTimeLine = ({ w, h }) => {
 
     ];
     return (
-        <div className={`w-[${w}px] h-[${h}px]`}>
+        <div
+            style={{
+                width: w.toString() + 'px',
+                height: h.toString() + 'px'
+            }}
+            // className={`w-[${w}px] h-[${h}px]`}
+        >
             <Chrono
                 items={dates}
                 mediaSettings={{ align: 'left' }}
@@ -179,6 +185,16 @@ const DiaryTimeLine = ({ w, h }) => {
                             </div>
                         </div>;
                     })
+                }
+                {
+                    <div className='chrono-icons'>
+                        {
+                            items.map((item, index) => {
+                                return (
+                                    <div key={index} className='w-[10px] h-[10px] rounded-[50px]' style={{ backgroundColor: 'black' }}></div>
+                                );
+                            })}
+                    </div>
                 }
             </Chrono>
         </div>
