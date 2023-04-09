@@ -83,7 +83,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Chrono } from 'react-chrono';
 
-const DiaryTimeLine = () => {
+const DiaryTimeLine = ({ w, h }) => {
     const dates = [
         {
             title: '1/2023'
@@ -110,43 +110,44 @@ const DiaryTimeLine = () => {
     ];
     const items = [
         {
-            content: 'Overnight for with friend',
+            content: 'Overnight with friend hahaha',
             header: 'UI design'
         },
         {
-            content: 'Overnight for with friend',
+            content: 'Overnight with friend',
             header: 'UI design'
         },
         {
-            content: 'Overnight for with friend',
+            content: 'Overnight with friend',
             header: 'UI design'
         },
         {
-            content: 'Overnight for with friend',
+            content: 'Overnight with friend',
             header: 'UI design'
         },
         {
-            content: 'Overnight for with friend',
+            content: 'Overnight with friend',
             header: 'UI design'
         },
         {
-            content: 'Overnight for with friend',
+            content: 'Overnight with friend',
             header: 'UI design'
         },
         {
-            content: 'Overnight for with friend',
+            content: 'Overnight with friend',
             header: 'UI design'
         },
         {
-            content: 'Overnight for with friend',
+            content: 'Overnight with friend',
             header: 'UI design'
         }
 
     ];
     return (
-        <div className='w-[420px] h-[540px]'>
+        <div className={`w-[${w}px] h-[${h}px]`}>
             <Chrono
                 items={dates}
+                mediaSettings={{ align: 'left' }}
                 mode="VERTICAL"
                 slideItemDuration={4000}
                 scrollable={{ scrollbar: false }}
@@ -169,7 +170,7 @@ const DiaryTimeLine = () => {
                 {
                     items.map((item, index) => {
                         return <div key={index} className='flex flex-row'>
-                            <div>
+                            <div className='w-52'>
                                 <h1 className='text-lg font-semibold'>{item.header}</h1>
                                 <p>{item.content}</p>
                             </div>
