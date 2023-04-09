@@ -150,7 +150,7 @@ const DiaryTimeLine = ({ w, h }) => {
                 mediaSettings={{ align: 'left' }}
                 mode="VERTICAL"
                 slideItemDuration={4000}
-                scrollable={{ scrollbar: false }}
+                scrollable={{ scrollbar: true }}
                 // enableDarkToggle
                 cardHeight={0}
                 cardWidth={250}
