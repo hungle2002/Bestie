@@ -32,7 +32,7 @@ export const Toast = ({ message = 'I am waiting for your', callback, close }) =>
             top,
             right
         }}
-        className={'w-[300px] flex flex-col flex-start p-2 fixed z-50 border-2 border-zinc-600 rounded-md bg-white cursor-pointer'}
+        className={'w-[300px] flex flex-col flex-start p-2 fixed z-50 border-2 border-zinc-600 rounded-md bg-white cursor-pointer text-zinc-800'}
         onClick={(e) => {
             console.log('Pop up onclick');
             callback();

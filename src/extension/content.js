@@ -70,7 +70,7 @@ const App = () => {
         showEndDayBox && <>
             <div
             // eslint-disable-next-line max-len
-                className="fixed z-40 left-0 top-0 w-screen h-screen bg-zinc-100 opacity-50 cursor-pointer"
+                className="fixed z-40 left-0 top-0 w-screen h-screen bg-zinc-100 opacity-50 cursor-pointer text-zinc-800"
             ></div>
             <div
             // eslint-disable-next-line max-len

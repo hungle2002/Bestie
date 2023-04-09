@@ -42,7 +42,7 @@ function EndDayBox () {
                     stiffness: 100
                 }}
                 exit={{ y: -400, opacity: 0 }}
-                className="flex flex-col pt-2 justify-center border border-zinc-400 bg-white rounded-xl text-zinc-900x"
+                className="flex flex-col pt-2 justify-center border border-zinc-400 bg-white rounded-xl text-zinc-900"
             >
                 <AnimatePresence>
                     {showModal

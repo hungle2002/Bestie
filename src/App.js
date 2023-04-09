@@ -128,7 +128,7 @@ export default function App () {
             }}
         >
             <Router>
-                <div className="App">
+                <div className="App text-black">
                     <Routes>
                         {puplicRoutes.map((route, index) => {
                             const Page = route.component;
