@@ -1,43 +1,31 @@
-<!doctype html>
-<!--
- This page is shown when the extension button is clicked, because the
- "browser_action" field in manifest.json contains the "default_popup" key with
- value "popup.html".
- -->
-<html>
-  <head>
-    <title>Getting Started Extension's Popup</title>
-    <style type="text/css">
-      body {
-        margin: 10px;
-        white-space: nowrap;
-      }
+<!DOCTYPE html>
+<html lang="en">
 
-      #container {
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-      }
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <title>Bestie</title>
 
-      .start {
-        border: 1px solid #000;
-        border-radius: 15px;
-        padding: 5px 15px;
-        cursor: pointer;
-      }
-    </style>
+</head>
 
-    <script src="popup.js"></script>
-  </head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
 
-  <body>
-    <div id="container">
-     <!--
-      Render react app in the visited website when the .start button is clicked.
-     -->
-      <button class="start">
-        Render App
-      </button>
-    </div>
-  </body>
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+</body>
+
+<script src="./build/popup.js"></script>
+
 </html>
