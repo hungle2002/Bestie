@@ -6,43 +6,91 @@ import puplicRoutes from './routes';
 export const AppContext = createContext();
 
 export default function App () {
+    const backGroundDiary = [
+        {
+            title: '8/4/2023',
+            content: 'Earn only 5.5, too low for all my attempt',
+            header: 'IETLS self-learning',
+            type: 'Studying'
+        },
+        {
+            title: '7/4/2023',
+            content: 'I were sick and can not complete the lab',
+            header: 'Miss deadline for OS lab',
+            type: 'Minathon project'
+        },
+        {
+            title: '6/4/2023',
+            content: 'Overnight with friend for design UI of UWC project',
+            header: 'Design UX/UI',
+            type: 'UWC project'
+        },
+        {
+            title: '5/4/2023',
+            content: 'Fine by police went hang out with friend',
+            header: 'Farther birthday',
+            type: 'Family'
+        },
+        {
+            title: '4/4/2023',
+            content: 'Get only 4.5 scores on IETLS online testing',
+            header: 'IETLS self-study',
+            type: 'Self-study'
+        },
+        {
+            title: '3/4/2023',
+            content: 'Overnight with friend for design UI of UWC project',
+            header: 'Design UX/UI',
+            type: 'UWC project'
+        },
+        {
+            title: '1/4/2023',
+            content: 'Get schoolarship for hard studying',
+            header: 'Schoollarship',
+            type: 'Studying'
+        },
+        {
+            title: '20/3/2023',
+            content: 'Get 9.5 marks on PPL midterm exams',
+            header: 'School mark',
+            type: 'Studying'
+        }
+    ];
     const [diaries, setDiaries] = useState([
         {
-            title: '1/2023',
-            content: 'Content',
-            header: 'Header',
-            status: 'done',
-            type: 'project A'
+            title: '8/2023',
+            header: 'Codgen for MIPS',
+            type: 'PPL project'
         },
         {
-            title: '1/2023',
-            content: 'Content',
-            header: 'Header',
-            type: 'project A'
+            title: '7/2023',
+            header: 'Host server on Haroku',
+            type: 'Bestie project',
+            current: true
         },
         {
-            title: '1/2023',
-            content: 'Content',
-            header: 'Header',
-            type: 'project A'
+            title: '6/2023',
+            content: 'Complete UI design for dashboard and statistic page',
+            header: 'UI design',
+            type: 'Bestie project'
         },
         {
-            title: '1/2023',
-            content: 'Content',
-            header: 'Header',
-            type: 'project A'
+            title: '4/2023',
+            content: 'Draw EERD and mapping design',
+            header: 'Design database',
+            type: 'Self project'
         },
         {
-            title: '1/2023',
-            content: 'Content',
-            header: 'Header',
-            type: 'project A'
+            title: '2/2023',
+            content: 'Complete all details for my English project',
+            header: 'Brainstorm',
+            type: 'Self project'
         },
         {
-            title: '1/2023',
-            content: 'Content',
-            header: 'Header',
-            type: 'project A'
+            title: '11/2022',
+            content: 'Complete UI design for dashboard and statistic page',
+            header: 'UI design',
+            type: 'Bestie project'
         }
     ]);
     const [evalMarks, setEvalMarks] = useState([70, 90, 50, 60, 30, 40, 20]);
