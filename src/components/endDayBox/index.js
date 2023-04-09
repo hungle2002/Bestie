@@ -8,6 +8,7 @@ import Lottie from 'react-lottie';
 /* eslint-disable max-len */
 import animationData from '../../lotties/writing.json';
 import TimeTable from '../animatedElements/TimeTable';
+import { createToast, Toast } from '../toast';
 import ChartBox from './chart';
 function EndDayBox () {
     const [diaryInput, setDiaryInput] = useState(0);
@@ -192,8 +193,9 @@ function EndDayBox () {
                             <div className='w-full flex flex-row justify-end items-center'>
                                 <button className="border bg-blue-500 text-white font-medium px-2 py-2 text-sm rounded-xl mt-4"
                                     onClick={() => {
-                                        setEvalInput('');
-                                        handleFocus(false);
+                                        // setEvalInput('');
+                                        // handleFocus(false);
+                                        createToast("I'm happy to see you grow over the day!!!");
                                     }
                                     }
                                 >Evaluate</button>
